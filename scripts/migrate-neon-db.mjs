@@ -8,7 +8,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, '..');
 
-const connectionString = "postgresql://neondb_owner:npg_CBx3Svwj9fzk@ep-sweet-mud-aw544ynr-pooler.c-12.us-east-1.aws.neon.tech/neondb?sslmode=require";
+const connectionString = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+if (!connectionString) {
+  console.error('ERROR: DATABASE_URL environment variable is not set.');
+  console.error('Usage: DATABASE_URL="postgresql://..." node scripts/migrate-neon-db.mjs');
+  process.exit(1);
+}
+
 
 async function runMigration() {
   console.log('Connecting to Neon PostgreSQL...');
