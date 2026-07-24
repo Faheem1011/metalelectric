@@ -1,0 +1,2 @@
+name,slug,sku,short_description,description,price_pkr,compare_at_price_pkr,stock_quantity,tags,category_slug,cover_image_url,is_active,is_featured
+Example Electrical Cable,example-electrical-cable,ME-001,Short customer-facing summary,Full product details go here,2500,2900,12,"cable,featured",cables,https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=1200&q=80,true,true
