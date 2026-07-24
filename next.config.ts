@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
   images: {
     unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "i.postimg.cc" },
+      { protocol: "https", hostname: "onvolt.pl" }
+    ],
   },
 };
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { X, CheckCircle2, Smartphone, Activity } from 'lucide-react';
+import { X, Phone, Check } from 'lucide-react';
 import { Product, COMPANY_DETAILS } from '@/lib/catalog-data';
 
 interface ProductDetailModalProps {
@@ -11,65 +11,58 @@ interface ProductDetailModalProps {
 }
 
 export default function ProductDetailModal({ product, onClose }: ProductDetailModalProps) {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState<'specs' | 'description' | 'useCases'>('specs');
+  const [selectedImageIdx, setSelectedImageIdx] = useState<number>(0);
 
   if (!product) return null;
 
-  const handleWhatsAppQuote = () => {
-    const message = encodeURIComponent(
-      `Hello Metalectrics! I want to inquire about: ${product.name} (SKU: ${product.sku}).\n` +
-      `Price: Rs ${product.price.toLocaleString()}\n` +
-      `Please provide delivery details and availability.`
+  const handleWhatsApp = () => {
+    const text = encodeURIComponent(
+      `Hello Metalectrics! I want to order / inquire about: ${product.name} (SKU: ${product.sku}). ` +
+      `Price: Rs ${product.price.toLocaleString()}. Please provide delivery details.`
     );
-    window.open(`https://wa.me/${COMPANY_DETAILS.whatsapp}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_DETAILS.whatsapp}?text=${text}`, '_blank');
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
       <div 
-        className="relative w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl my-8 text-white max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-3xl bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden my-8 max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/80">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-            <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">{product.sku}</span>
-          </div>
-          <button 
-            onClick={onClose}
-            className="p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition"
-          >
+        
+        {/* Modal Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+          <div className="text-xs font-mono font-bold text-slate-500">{product.sku}</div>
+          <button onClick={onClose} className="p-1 rounded text-slate-400 hover:text-slate-700">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-8 flex-grow">
+        {/* Modal Scrollable Content */}
+        <div className="p-6 overflow-y-auto space-y-6 flex-grow">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             
-            <div className="md:col-span-6 space-y-4">
-              <div className="relative w-full h-[320px] sm:h-[360px] rounded-2xl bg-gradient-to-b from-slate-950 to-slate-900 border border-slate-800 overflow-hidden flex items-center justify-center">
+            {/* Left: Image */}
+            <div className="md:col-span-5 space-y-3">
+              <div className="relative w-full aspect-square bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-center justify-center">
                 <Image 
-                  src={product.images[selectedImageIndex] || product.images[0]} 
+                  src={product.images[selectedImageIdx] || product.images[0]} 
                   alt={product.name}
                   fill
-                  className="object-contain p-4"
+                  className="object-contain p-2"
                 />
-                {product.badge && (
-                  <span className="absolute top-3 left-3 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    {product.badge}
-                  </span>
-                )}
               </div>
 
               {product.images.length > 1 && (
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   {product.images.map((img, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setSelectedImageIndex(idx)}
-                      className={`relative w-20 h-20 rounded-xl overflow-hidden border-2 transition ${
-                        selectedImageIndex === idx ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
+                      onClick={() => setSelectedImageIdx(idx)}
+                      className={`relative w-16 h-16 rounded-md overflow-hidden border ${
+                        selectedImageIdx === idx ? 'border-blue-600' : 'border-slate-200'
                       }`}
                     >
                       <Image src={img} alt="" fill className="object-cover" />
@@ -79,70 +72,106 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               )}
             </div>
 
-            <div className="md:col-span-6 space-y-5">
+            {/* Right: Info */}
+            <div className="md:col-span-7 space-y-4">
               <div>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{product.category} • {product.subcategory}</span>
-                <h2 className="text-2xl sm:text-3xl font-black text-white mt-1 leading-tight">{product.name}</h2>
+                <div className="text-xs font-semibold text-blue-600 mb-1">{product.category}</div>
+                <h2 className="text-xl font-extrabold text-slate-900 leading-tight">{product.name}</h2>
               </div>
 
-              <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-black text-amber-400">Rs {product.price.toLocaleString()}</span>
+              <div className="text-2xl font-extrabold text-slate-900">
+                Rs {product.price.toLocaleString()}
                 {product.oldPrice && (
-                  <span className="text-base text-slate-500 line-through">Rs {product.oldPrice.toLocaleString()}</span>
+                  <span className="text-xs text-slate-400 line-through ml-3">Rs {product.oldPrice.toLocaleString()}</span>
                 )}
               </div>
 
-              <p className="text-sm text-slate-300 leading-relaxed">{product.description}</p>
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-700 space-y-1">
+                <div className="font-bold text-slate-900">Key Specification</div>
+                <div>{product.shortSpec}</div>
+              </div>
 
-              {product.recommendedFor && (
-                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 font-semibold">
-                  ⚡ Recommended For: {product.recommendedFor}
-                </div>
-              )}
+              <button onClick={handleWhatsApp} className="btn-whatsapp w-full py-3 text-sm">
+                <Phone className="w-4 h-4" />
+                <span>Get WhatsApp Quote</span>
+              </button>
+            </div>
 
-              <div className="space-y-2 pt-2">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Highlights</h4>
-                <ul className="space-y-1.5 text-xs text-slate-300">
+          </div>
+
+          {/* Tabs Section */}
+          <div className="pt-4 border-t border-slate-200">
+            <div className="flex gap-4 border-b border-slate-200 pb-2 mb-4">
+              <button 
+                onClick={() => setActiveTab('specs')}
+                className={`text-xs font-bold pb-1 transition ${
+                  activeTab === 'specs' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500'
+                }`}
+              >
+                Specifications
+              </button>
+              <button 
+                onClick={() => setActiveTab('description')}
+                className={`text-xs font-bold pb-1 transition ${
+                  activeTab === 'description' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500'
+                }`}
+              >
+                Description
+              </button>
+              <button 
+                onClick={() => setActiveTab('useCases')}
+                className={`text-xs font-bold pb-1 transition ${
+                  activeTab === 'useCases' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500'
+                }`}
+              >
+                Use Cases
+              </button>
+            </div>
+
+            {/* Tab 1: Specs */}
+            {activeTab === 'specs' && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs">
+                {Object.entries(product.specifications).map(([key, val]) => (
+                  <div key={key} className="flex justify-between py-1.5 border-b border-slate-100">
+                    <span className="text-slate-500 font-medium">{key}</span>
+                    <span className="text-slate-900 font-semibold text-right">{val}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Tab 2: Description */}
+            {activeTab === 'description' && (
+              <div className="text-xs text-slate-700 leading-relaxed space-y-3">
+                <p>{product.description}</p>
+                <div className="font-bold text-slate-900 pt-2">Features List:</div>
+                <ul className="space-y-1.5 pl-2">
                   {product.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-center gap-2">
+                      <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+            )}
 
-              <div className="pt-4">
-                <button 
-                  onClick={handleWhatsAppQuote}
-                  className="w-full button-whatsapp py-4 text-base font-extrabold"
-                >
-                  <Smartphone className="w-5 h-5" />
-                  <span>Request WhatsApp Quotation</span>
-                </button>
+            {/* Tab 3: Use Cases */}
+            {activeTab === 'useCases' && (
+              <div className="space-y-2 text-xs">
+                {product.useCases.map((useCase, idx) => (
+                  <div key={idx} className="p-2.5 bg-slate-50 border border-slate-200 rounded text-slate-800 font-medium flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                    <span>{useCase}</span>
+                  </div>
+                ))}
               </div>
+            )}
 
-            </div>
-
-          </div>
-
-          <div className="pt-6 border-t border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <Activity className="w-5 h-5 text-amber-400" />
-              <span>Technical Specifications Matrix</span>
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 bg-slate-950/60 p-6 rounded-2xl border border-slate-800">
-              {Object.entries(product.specifications).map(([key, val]) => (
-                <div key={key} className="flex justify-between py-2 border-b border-slate-800/60 text-xs">
-                  <span className="text-slate-400 font-semibold">{key}</span>
-                  <span className="text-slate-100 font-mono font-bold text-right ml-4">{val}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>
+
       </div>
     </div>
   );

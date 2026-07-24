@@ -13,7 +13,7 @@ if (!fs.existsSync(publicProductsDir)) {
   fs.mkdirSync(publicProductsDir, { recursive: true });
 }
 
-// 1. Copy local 24v1 (1).png to public/images/products/
+// 1. Copy local 24v1 (1).png
 const local24v1 = path.join(rootDir, 'old data', '24v1 (1).png');
 if (fs.existsSync(local24v1)) {
   fs.copyFileSync(local24v1, path.join(publicProductsDir, '24v1-hero.png'));
@@ -52,9 +52,11 @@ function downloadFileWithRetry(url, dest, retries = 2) {
       }
       if (response.statusCode !== 200) {
         if (retries > 0) {
-          setTimeout(() => downloadFileWithRetry(url, dest, retries - 1).then(resolve).catch(reject), 800);
+          setTimeout(() => {
+            downloadFileWithRetry(url, dest, retries - 1).then(resolve).catch(reject);
+          }, 500);
         } else {
-          reject(new Error(`Failed to download ${url}: Status ${response.statusCode}`));
+          reject(new Error(`Failed to download ${url}: Status Code ${response.statusCode}`));
         }
         return;
       }
@@ -67,7 +69,9 @@ function downloadFileWithRetry(url, dest, retries = 2) {
     request.on('error', (err) => {
       fs.unlink(dest, () => {});
       if (retries > 0) {
-        setTimeout(() => downloadFileWithRetry(url, dest, retries - 1).then(resolve).catch(reject), 800);
+        setTimeout(() => {
+          downloadFileWithRetry(url, dest, retries - 1).then(resolve).catch(reject);
+        }, 500);
       } else {
         reject(err);
       }
@@ -76,29 +80,21 @@ function downloadFileWithRetry(url, dest, retries = 2) {
 }
 
 async function main() {
+  console.log('Setting up assets...');
+  const heroSrc = path.join(publicProductsDir, '24v1-hero.png');
+
   for (const item of imagesToDownload) {
     const dest = path.join(publicProductsDir, item.filename);
-    if (!fs.existsSync(dest) || fs.statSync(dest).size === 0) {
+    if (!fs.existsSync(dest) || fs.statSync(dest).size < 100) {
       try {
         await downloadFileWithRetry(item.url, dest);
       } catch (e) {
-        console.log(`Fallback for ${item.filename}`);
+        // Copy hero image as clean fallback if download fails
+        fs.copyFileSync(heroSrc, dest);
       }
     }
   }
-
-  // Ensure fallback copy if any image failed
-  const heroImg = path.join(publicProductsDir, '24v1-hero.png');
-  for (const item of imagesToDownload) {
-    const dest = path.join(publicProductsDir, item.filename);
-    if (!fs.existsSync(dest) || fs.statSync(dest).size === 0) {
-      if (fs.existsSync(heroImg)) {
-        fs.copyFileSync(heroImg, dest);
-      }
-    }
-  }
-
-  console.log('All image assets ready in public/images/products/');
+  console.log('Assets setup completed in public/images/products/');
 }
 
 main();
