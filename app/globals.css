@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@import "tailwindcss";
 
 :root {
   --bg: #ffffff;
@@ -55,7 +56,13 @@ button {
   cursor: pointer;
 }
 
-/* Layout Container */
+/* Image Safety Rules to prevent oversized unstyled images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
 .shell {
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
@@ -113,13 +120,14 @@ button {
   justify-content: center;
   gap: 8px;
   background: var(--accent-primary);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 10px 20px;
   border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.9rem;
   border: 0;
   transition: background 0.15s ease;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -132,13 +140,14 @@ button {
   justify-content: center;
   gap: 8px;
   background: #ffffff;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   padding: 10px 20px;
   border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.9rem;
   border: 1px solid #d1d5db;
   transition: background 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
@@ -152,13 +161,14 @@ button {
   justify-content: center;
   gap: 8px;
   background: var(--accent-success);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 10px 20px;
   border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.9rem;
   border: 0;
   transition: opacity 0.15s ease;
+  cursor: pointer;
 }
 
 .btn-whatsapp:hover {
@@ -200,29 +210,7 @@ button {
   line-height: 1.6;
 }
 
-/* Trust Row Separators */
 .trust-separator {
   color: var(--border);
   user-select: none;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--surface);
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
 }
