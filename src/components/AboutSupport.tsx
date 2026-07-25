@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { 
-  FileText, ShieldCheck, HelpCircle, FileDown, ArrowRight, CheckCircle, 
-  Settings, Award, Cpu, Sparkles, Building2, Zap
+  Building2, HelpCircle, FileDown, ArrowRight, CheckCircle2, 
+  Award, ShieldCheck, Zap, Sparkles, Target, Compass, HeartHandshake, Layers
 } from "lucide-react";
 
 interface AboutSupportProps {
@@ -32,33 +32,38 @@ export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage 
     {
       q: "How does the built-in Bluetooth monitoring app work?",
       a: "Each battery pack features a built-in Smart Bluetooth telemetry module. Simply download the mobile app on iOS or Android to view real-time state of charge (SoC), cell voltages, charge/discharge currents, temperature sensors, and health metrics."
+    },
+    {
+      q: "What warranty coverage is included with Metalectric products?",
+      a: "All signature Alpha Ampere wall-mount and server-rack lithium batteries come backed by a comprehensive 5-Year factory warranty. Our Okara engineering team handles repair and support directly."
     }
   ];
 
   const downloads = [
     { title: "Alpha Ampere LiFe-48200 Pro Datasheet (PDF)", size: "2.4 MB", type: "Specs Brochure", url: "#" },
-    { title: "Standard 19-inch Rack-Rack 48100 Installation Guide", size: "4.1 MB", type: "User Manual", url: "#" },
+    { title: "Standard 19-inch Rack 48100 Installation Guide", size: "4.1 MB", type: "User Manual", url: "#" },
     { title: "Official Inverter CAN/RS485 Protocol Connection Codes", size: "1.2 MB", type: "Technical Note", url: "#" },
-    { title: "Metalectrics Factory Warranty & Policy Document", size: "0.8 MB", type: "Certificate", url: "#" }
+    { title: "Metalectric Factory Warranty & Policy Document", size: "0.8 MB", type: "Certificate", url: "#" },
+    { title: "Lithium Battery Sizing & Solar System Integration Guide", size: "3.5 MB", type: "Engineering Guide", url: "#" }
   ];
 
   const t = {
     EN: {
-      storyTab: "About Metalectrics",
+      storyTab: "About Metalectric",
       faqsTab: "Technical FAQs",
       downloadsTab: "Manuals & Downloads",
-      heroTitle: "ENGINEERING EXCELLENCE & SUPPORT",
-      heroSubtitle: "Pioneering high-capacity LiFePO4 battery manufacturing and technical energy solutions in Pakistan.",
-      quoteCTA: "Build Custom Quote",
-      contactCTA: "Contact Technical Support"
+      heroTitle: "ABOUT METALECTRIC",
+      heroSubtitle: "Engineering the future of energy storage with premium lithium battery solutions in Pakistan.",
+      quoteCTA: "Get Custom Sizing Quote",
+      contactCTA: "Contact Technical Support Desk"
     },
     UR: {
       storyTab: "ہمارے بارے میں",
       faqsTab: "ٹیکنیکل سوالات",
       downloadsTab: "ڈاؤن لوڈز",
-      heroTitle: "ٹیکنیکل سپورٹ اور میٹالیکٹرکس کے بارے میں",
+      heroTitle: "میٹالیکٹرک کے بارے میں",
       heroSubtitle: "پاکستان میں اعلیٰ معیار کی لیتھیم آئرن فاسفیٹ (LiFePO4) بیٹریوں کی مینوفیکچرنگ اور انرجی حل۔",
-      quoteCTA: "کوٹ حاصل کریں",
+      quoteCTA: "کوٹیشن حاصل کریں",
       contactCTA: "ٹیکنیکل سپورٹ سے رابطہ کریں"
     }
   }[lang];
@@ -70,7 +75,7 @@ export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage 
         {/* Header */}
         <div className="text-left mb-10">
           <span className="text-xs font-mono font-bold uppercase text-[#F6B91E] tracking-widest block mb-2">
-            METALECTRICS PK
+            METALECTRIC PK
           </span>
           <h1 className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight">
             {t.heroTitle}
@@ -122,62 +127,132 @@ export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage 
         {/* TAB 1: STORY / ABOUT US */}
         {activeTab === "story" && (
           <div className="space-y-12 text-left">
-            {/* Story Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Key Stats Counter Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 text-center hover:border-zinc-800 transition-all">
+                <span className="block text-3xl sm:text-5xl font-black font-mono text-[#F6B91E]">8+</span>
+                <span className="text-xs font-mono font-bold uppercase text-zinc-400 mt-2 block">Years Experience</span>
+                <span className="text-[10px] text-zinc-600 mt-1 block">In Lithium Battery Design</span>
+              </div>
+              <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 text-center hover:border-zinc-800 transition-all">
+                <span className="block text-3xl sm:text-5xl font-black font-mono text-[#F6B91E]">500+</span>
+                <span className="text-xs font-mono font-bold uppercase text-zinc-400 mt-2 block">Batteries Delivered</span>
+                <span className="text-[10px] text-zinc-600 mt-1 block">Residential & Commercial</span>
+              </div>
+              <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 text-center hover:border-zinc-800 transition-all">
+                <span className="block text-3xl sm:text-5xl font-black font-mono text-[#F6B91E]">499+</span>
+                <span className="text-xs font-mono font-bold uppercase text-zinc-400 mt-2 block">Happy Customers</span>
+                <span className="text-[10px] text-zinc-600 mt-1 block">Across All Major Cities</span>
+              </div>
+              <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 text-center hover:border-zinc-800 transition-all">
+                <span className="block text-3xl sm:text-5xl font-black font-mono text-[#F6B91E]">99%</span>
+                <span className="text-xs font-mono font-bold uppercase text-zinc-400 mt-2 block">Satisfaction Rate</span>
+                <span className="text-[10px] text-zinc-600 mt-1 block">Proven Quality & Reliability</span>
+              </div>
+            </div>
+
+            {/* Who We Are & Our Journey */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-6">
-                <span className="text-xs font-mono text-[#F6B91E] font-bold uppercase tracking-widest block">
-                  ENGINEERING HERITAGE
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                  Replacing Lead-Acid Weakness with Automotive Grade Lithium
-                </h2>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Founded with a vision to solve Pakistan's chronic energy storage challenges, <strong className="text-white">Metalectrics</strong> designs and builds premium <strong className="text-white">Alpha Ampere</strong> series Lithium Iron Phosphate (LiFePO4) power systems.
-                </p>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Traditional lead-acid and tubular batteries degrade rapidly under daily load-shedding and ambient temperatures exceeding 40°C. Alpha Ampere batteries are built with Prismatic Grade-A LiFePO4 cells, active Smart BMS balancing, and zero-maintenance sealed enclosures that deliver 8,000+ deep discharge cycles over a 15+ year operational lifespan.
+                <div>
+                  <span className="text-xs font-mono text-[#F6B91E] font-bold uppercase tracking-widest block mb-1">
+                    WHO WE ARE
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                    Forward-Thinking Engineering in Energy Storage
+                  </h2>
+                </div>
+                
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  <strong className="text-white">Metalectric</strong> is a forward-thinking engineering company focused on advanced lithium battery technologies. With deep expertise in Lithium Iron Phosphate (LiFePO4) systems, we design and manufacture reliable power solutions for homes, vehicles, and commercial applications. We proudly offer our signature battery brand, <strong className="text-[#F6B91E]">Alpha Ampere</strong>, engineered for safety, performance, and customization.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div className="p-4 rounded-xl bg-[#090909] border border-zinc-900">
-                    <span className="block text-2xl font-black text-[#F6B91E]">8,000+</span>
-                    <span className="text-xs font-mono text-zinc-500 uppercase">Cycle Life @ 80% DoD</span>
-                  </div>
-                  <div className="p-4 rounded-xl bg-[#090909] border border-zinc-900">
-                    <span className="block text-2xl font-black text-[#F6B91E]">15+ Years</span>
-                    <span className="text-xs font-mono text-zinc-500 uppercase">Designed Operational Life</span>
-                  </div>
+                <div className="border-t border-zinc-900 pt-6">
+                  <span className="text-xs font-mono text-[#F6B91E] font-bold uppercase tracking-widest block mb-2">
+                    OUR JOURNEY
+                  </span>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Our journey began when our founders recognized the growing need for reliable, high-performance batteries in the renewable energy sector. Today, we serve customers across multiple industries, from residential solar installations to commercial motorcycle applications. With over a decade of experience, we've built our reputation on engineering excellence, innovative solutions, and an unwavering commitment to customer satisfaction.
+                  </p>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-[#090909] border border-zinc-900 rounded-3xl p-8 space-y-6">
-                <h3 className="text-lg font-bold text-white uppercase flex items-center space-x-2">
-                  <Award className="text-[#F6B91E]" size={20} />
-                  <span>Manufacturing Principles</span>
-                </h3>
-                <ul className="space-y-4 text-xs text-zinc-400">
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle size={16} className="text-[#F6B91E] shrink-0 mt-0.5" />
-                    <span><strong>100% Grade-A Prismatic Cells:</strong> Every cell is QR-verified for internal impedance ≤ 0.5mΩ.</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle size={16} className="text-[#F6B91E] shrink-0 mt-0.5" />
-                    <span><strong>Integrated Smart Bluetooth BMS:</strong> Real-time voltage, current, and temperature telemetry directly to your smartphone app.</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle size={16} className="text-[#F6B91E] shrink-0 mt-0.5" />
-                    <span><strong>Universal Inverter Compatibility:</strong> Direct CAN / RS485 communication with Deye, Victron, Growatt, Solis, and Inverex.</span>
-                  </li>
-                </ul>
+              {/* Mission & Vision Cards */}
+              <div className="lg:col-span-5 space-y-4">
+                <div className="bg-[#090909] border border-zinc-900 rounded-3xl p-6 space-y-3">
+                  <div className="flex items-center space-x-3 text-[#F6B91E]">
+                    <Target size={22} />
+                    <h3 className="text-base font-extrabold text-white uppercase tracking-wider">Our Mission</h3>
+                  </div>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    To provide cutting-edge lithium battery solutions that empower sustainable energy systems and reliable transportation. We are committed to engineering excellence, safety, and environmental responsibility in every product we deliver.
+                  </p>
+                </div>
+
+                <div className="bg-[#090909] border border-zinc-900 rounded-3xl p-6 space-y-3">
+                  <div className="flex items-center space-x-3 text-[#F6B91E]">
+                    <Compass size={22} />
+                    <h3 className="text-base font-extrabold text-white uppercase tracking-wider">Our Vision</h3>
+                  </div>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    To be the global leader in lithium battery technology, driving the transition to clean energy and sustainable transportation. We envision a world powered by reliable, efficient, and environmentally conscious energy storage solutions.
+                  </p>
+                </div>
 
                 <button
                   onClick={() => setActivePage("get-quote")}
-                  className="w-full py-3.5 rounded-xl bg-[#F6B91E] hover:bg-[#e0a410] text-[#050505] font-bold text-sm transition-all"
+                  className="w-full py-3.5 rounded-xl bg-[#F6B91E] hover:bg-[#e0a410] text-[#050505] font-black text-xs uppercase tracking-wider transition-all shadow-lg"
                 >
                   {t.quoteCTA}
                 </button>
               </div>
             </div>
+
+            {/* Core Values Section */}
+            <div className="border-t border-zinc-900 pt-10">
+              <div className="text-center max-w-2xl mx-auto mb-8">
+                <span className="text-xs font-mono font-bold uppercase text-[#F6B91E] tracking-widest block mb-1">
+                  OUR GUIDING PRINCIPLES
+                </span>
+                <h3 className="text-2xl font-black text-white uppercase">Core Values</h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3 text-left hover:border-zinc-800 transition-all">
+                  <Sparkles className="text-[#F6B91E]" size={24} />
+                  <h4 className="font-extrabold text-white text-sm uppercase">Innovation</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Constantly pushing boundaries to deliver cutting-edge lithium solutions and advanced BMS balancing microchips.
+                  </p>
+                </div>
+
+                <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3 text-left hover:border-zinc-800 transition-all">
+                  <ShieldCheck className="text-[#F6B91E]" size={24} />
+                  <h4 className="font-extrabold text-white text-sm uppercase">Reliability</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Rigorous thermal stress testing and impedance matching to ensure maximum performance and safety standards.
+                  </p>
+                </div>
+
+                <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3 text-left hover:border-zinc-800 transition-all">
+                  <HeartHandshake className="text-[#F6B91E]" size={24} />
+                  <h4 className="font-extrabold text-white text-sm uppercase">Customer Focus</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Your success is our priority. We provide personalized sizing solutions for every unique load requirement.
+                  </p>
+                </div>
+
+                <div className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3 text-left hover:border-zinc-800 transition-all">
+                  <Award className="text-[#F6B91E]" size={24} />
+                  <h4 className="font-extrabold text-white text-sm uppercase">Engineering Excellence</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Our team of expert engineers ensures every finished battery pack meets ISO-certified manufacturing standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         )}
 
@@ -185,7 +260,7 @@ export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage 
         {activeTab === "faqs" && (
           <div className="space-y-6 max-w-4xl mx-auto text-left">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3">
+              <div key={idx} className="bg-[#090909] border border-zinc-900 rounded-2xl p-6 space-y-3 hover:border-zinc-800 transition-all">
                 <h3 className="text-base font-bold text-white flex items-start space-x-3">
                   <span className="text-[#F6B91E] font-mono">Q{idx + 1}.</span>
                   <span>{faq.q}</span>
@@ -203,7 +278,7 @@ export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage 
               </p>
               <button
                 onClick={() => setActivePage("contact")}
-                className="px-6 py-3 rounded-xl bg-[#F6B91E] text-[#050505] font-bold text-xs uppercase tracking-wider hover:bg-[#e0a410] transition-all inline-flex items-center space-x-2"
+                className="px-6 py-3 rounded-xl bg-[#F6B91E] text-[#050505] font-bold text-xs uppercase tracking-wider hover:bg-[#e0a410] transition-all inline-flex items-center space-x-2 shadow-lg"
               >
                 <span>{t.contactCTA}</span>
                 <ArrowRight size={14} />

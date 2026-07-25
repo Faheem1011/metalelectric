@@ -257,7 +257,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
               <span className="text-xs font-mono text-[#F6B91E] font-bold tracking-widest uppercase">SECURE ADMIN ACCESS</span>
             </div>
             <h2 className="text-2xl font-black text-white tracking-tight">Administrative Portal</h2>
-            <p className="text-xs text-zinc-400 leading-relaxed">Enter authorized credentials to access the Metalectrics management console.</p>
+            <p className="text-xs text-zinc-400 leading-relaxed">Enter authorized credentials to access the Metalectric management console.</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4 pt-2">

@@ -47,7 +47,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
 
   const t = {
     EN: {
-      title: "GET IN TOUCH WITH METALECTRICS",
+      title: "GET IN TOUCH WITH METALECTRIC",
       subtitle: "Have a technical query about battery balancing, serial-parallel configurations, or inverter integration? Connect directly with our engineering team.",
       badge: "CUSTOMER ASSISTANCE",
       successTitle: "Message Logged Successfully",
@@ -58,14 +58,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
       subjectLabel: "Subject of Inquiry *",
       messageLabel: "Detailed Message / Load details *",
       submitBtn: "Submit Engineering Inquiry",
-      boxTitle: "Metalectrics Headquarters",
+      boxTitle: "Metalectric Headquarters",
       officeTitle: "Main Office & Showroom",
       factoryTitle: "Manufacturing Facility",
       officeAddress: "Faisalabad Road, Okara, Pakistan",
       factoryAddress: "Faisalabad Road, Okara, Pakistan"
     },
     UR: {
-      title: "میٹالیکٹرکس سے رابطہ کریں",
+      title: "میٹالیکٹرک سے رابطہ کریں",
       subtitle: "اگر آپ کے پاس لیتھیم بیٹری، بی ایم ایس، یا انورٹر کی مطابقت کے بارے میں کوئی سوال ہے، تو ہم سے رابطہ کریں۔",
       badge: "رابطہ کریں",
       successTitle: "آپ کا پیغام موصول ہو گیا ہے",
@@ -76,7 +76,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
       subjectLabel: "موضوع *",
       messageLabel: "تفصیلی پیغام *",
       submitBtn: "پیغام جمع کروائیں",
-      boxTitle: "میٹالیکٹرکس ہیڈ کوارٹرز",
+      boxTitle: "میٹالیکٹرک ہیڈ کوارٹرز",
       officeTitle: "مین آفس اور شوروم",
       factoryTitle: "فیکٹری اور پلانٹ",
       officeAddress: "فیصل آباد روڈ، اوکاڑہ، پاکستان",
@@ -141,7 +141,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                   <Mail className="text-[#F6B91E] mt-0.5 shrink-0" size={16} />
                   <div>
                     <span className="block font-bold text-white text-xs uppercase font-mono">EMAIL DESK</span>
-                    <span className="font-mono text-zinc-300 block mt-1">metalectrics@gmail.com / info@metalectrics.com</span>
+                    <span className="font-mono text-zinc-300 block mt-1">metalectricpk@gmail.com / info@metalectric.com</span>
                   </div>
                 </div>
               </div>

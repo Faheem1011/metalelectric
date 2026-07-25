@@ -17,7 +17,7 @@ export const AlphaAmpereLogo: React.FC<LogoProps> = ({ size = 48, className = ""
   );
 };
 
-export const MetalectricLogo: React.FC<LogoProps> = ({ size = 48, className = "", alt = "Metalectrics Logo", ...props }) => {
+export const MetalectricLogo: React.FC<LogoProps> = ({ size = 48, className = "", alt = "Metalectric Logo", ...props }) => {
   return (
     <img
       src="/logo_2_nobg.png"

@@ -346,10 +346,10 @@
       "id": "blog-1",
       "title": "Why LiFePO₄ is the Ultimate Lithium Chemistry for Pakistan's Extreme Climate",
       "slug": "lifepo4-pakistan-extreme-climate",
-      "content": "Pakistan experiences some of the most brutal summers globally, with ambient temperatures in Sindh and Punjab frequently scaling past 45°C. For industrial plants and high-end residential energy backups, traditional Lithium-Ion (NMC) or Lead-Acid batteries represent massive hazards.\n\n### The Science of LiFePO₄\nLithium Iron Phosphate (LiFePO4) stands apart due to its extreme thermal stability. Unlike NMC cells which can enter thermal runaway at ~150°C, LiFePO₄ thermal runaway threshold sits robustly at 270°C. Additionally, the chemistry delivers over 8,000 cycles without significant degradation, whereas Lead-Acid batteries give up after 300-500 cycles under typical high-temperature operations.\n\nAt **Metalectrics**, our battery packs feature custom-molded cellular spacer channels and smart thermal cutoffs, ensuring absolute safety even during extended blackouts in June.",
+      "content": "Pakistan experiences some of the most brutal summers globally, with ambient temperatures in Sindh and Punjab frequently scaling past 45°C. For industrial plants and high-end residential energy backups, traditional Lithium-Ion (NMC) or Lead-Acid batteries represent massive hazards.\n\n### The Science of LiFePO₄\nLithium Iron Phosphate (LiFePO4) stands apart due to its extreme thermal stability. Unlike NMC cells which can enter thermal runaway at ~150°C, LiFePO₄ thermal runaway threshold sits robustly at 270°C. Additionally, the chemistry delivers over 8,000 cycles without significant degradation, whereas Lead-Acid batteries give up after 300-500 cycles under typical high-temperature operations.\n\nAt **Metalectric**, our battery packs feature custom-molded cellular spacer channels and smart thermal cutoffs, ensuring absolute safety even during extended blackouts in June.",
       "category": "Lithium",
       "tags": ["LiFePO4", "Battery Safety", "Pakistan climate"],
-      "author": "Metalectrics Engineering Team",
+      "author": "Metalectric Engineering Team",
       "featuredImage": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
       "createdAt": "2026-07-20T10:30:00Z",
       "readTime": "5 min read"
@@ -359,19 +359,19 @@
   "dealers": [],
   "messages": [],
   "settings": {
-    "logo": "Metalectrics",
+    "logo": "Metalectric",
     "favicon": "/favicon.png",
     "theme": "dark",
     "socialLinks": {
       "facebook": "https://www.facebook.com/profile.php?id=61576602905984",
-      "instagram": "https://www.instagram.com/metalectrics/",
-      "youtube": "https://www.youtube.com/@METALECTRICS"
+      "instagram": "https://www.instagram.com/metalectricpk/",
+      "youtube": "https://www.youtube.com/@METALECTRICPK"
     },
     "contactInfo": {
       "phone": "+92 309 8000565",
       "secondaryPhone": "+92 344 6760259",
-      "email": "metalectrics@gmail.com",
-      "infoEmail": "info@metalectrics.com",
+      "email": "metalectricpk@gmail.com",
+      "infoEmail": "info@metalectric.com",
       "officeAddress": "Faisalabad Road, Okara, Pakistan",
       "businessHours": "Saturday–Thursday, 10:00 AM–8:00 PM"
     },

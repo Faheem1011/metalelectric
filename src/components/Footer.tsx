@@ -33,15 +33,15 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, lang, settings })
   const cInfo = settings?.contactInfo || {
     phone: "+92 309 8000565",
     secondaryPhone: "+92 344 6760259",
-    email: "metalectrics@gmail.com",
-    infoEmail: "info@metalectrics.com",
+    email: "metalectricpk@gmail.com",
+    infoEmail: "info@metalectric.com",
     officeAddress: "Faisalabad Road, Okara, Punjab, Pakistan",
     factoryAddress: "Faisalabad Road, Okara, Punjab, Pakistan"
   };
 
   const t = {
     EN: {
-      about: "ABOUT METALECTRICS",
+      about: "ABOUT METALECTRIC",
       aboutDesc: "Pakistan's premier clean-energy lithium-ion battery design and manufacturing company. Engineering tomorrow's safe Alpha Ampere LiFePO4 power backups.",
       links: "QUICK LINKS",
       contact: "HEADQUARTERS CONTACT",
@@ -49,13 +49,13 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, lang, settings })
       newsletterDesc: "Get monthly technical battery datasheets, price updates, and energy storage guidelines.",
       newsletterPlaceholder: "Enter your email address",
       newsletterBtn: "Subscribe",
-      rights: "© 2026 Metalectrics. All rights reserved.",
+      rights: "© 2026 Metalectric. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
       whatsAppText: "Chat on WhatsApp"
     },
     UR: {
-      about: "میٹالیکٹرکس کے بارے میں",
+      about: "میٹالیکٹرک کے بارے میں",
       aboutDesc: "پاکستان میں متبادل توانائی اور لیتھیم بیٹری مینوفیکچرنگ کی پیشرو کمپنی۔ الفا ایمپیئر لیتھیم بیٹری کی تیار کنندہ۔",
       links: "ضروری لنکس",
       contact: "ہیڈ کوارٹرز سے رابطہ",
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, lang, settings })
       newsletterDesc: "ماہانہ بنیادوں پر لیتھیم بیٹری کی قیمتوں اور ٹیکنیکل معلومات کی ای میل حاصل کریں۔",
       newsletterPlaceholder: "اپنی ای میل درج کریں",
       newsletterBtn: "سبسکرائب کریں",
-      rights: "© 2026 میٹالیکٹرکس۔ تمام حقوق محفوظ ہیں۔",
+      rights: "© 2026 میٹالیکٹرک۔ تمام حقوق محفوظ ہیں۔",
       privacy: "رازداری کی پالیسی",
       terms: "شرائط و ضوابط",
       whatsAppText: "واٹس ایپ پر رابطہ کریں"
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, lang, settings })
             </li>
             <li>
               <button onClick={() => navTo("about")} className="hover:text-white transition-colors">
-                About Metalectrics
+                About Metalectric
               </button>
             </li>
             <li>

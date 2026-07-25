@@ -24,19 +24,19 @@ export default function App() {
   const [products, setProducts] = useState<Product[]>(initialDb.products as Product[] || []);
   const [blogs, setBlogs] = useState<BlogPost[]>(initialDb.blogs as BlogPost[] || []);
   const [settings, setSettings] = useState<SiteSettings>({
-    logo: "Metalectrics",
+    logo: "Metalectric",
     favicon: "/favicon.png",
     theme: "dark",
     socialLinks: {
       facebook: "https://www.facebook.com/profile.php?id=61576602905984",
-      linkedin: "https://www.instagram.com/metalectrics/",
-      twitter: "https://www.youtube.com/@METALECTRICS"
+      linkedin: "https://www.instagram.com/metalectricpk/",
+      twitter: "https://www.youtube.com/@METALECTRICPK"
     },
     contactInfo: {
       phone: "+92 309 8000565",
       secondaryPhone: "+92 344 6760259",
-      email: "metalectrics@gmail.com",
-      infoEmail: "info@metalectrics.com",
+      email: "metalectricpk@gmail.com",
+      infoEmail: "info@metalectric.com",
       officeAddress: "Faisalabad Road, Okara, Pakistan",
       factoryAddress: "Faisalabad Road, Okara, Pakistan"
     },
