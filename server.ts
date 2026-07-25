@@ -5,7 +5,10 @@ import { createServer as createViteServer } from "vite";
 
 const app = express();
 const PORT = 3000;
-const DB_FILE = path.join(process.cwd(), "src", "db.json");
+const DB_FILE = process.env.VERCEL === "1"
+  ? path.join("/tmp", "db.json")
+  : path.join(process.cwd(), "src", "db.json");
+
 
 app.use(express.json());
 
@@ -225,12 +228,25 @@ const initialData = {
 function readDB() {
   try {
     if (!fs.existsSync(DB_FILE)) {
+      const srcDb = path.join(process.cwd(), "src", "db.json");
+      let dataToUse = initialData;
+      if (fs.existsSync(srcDb)) {
+        try {
+          dataToUse = JSON.parse(fs.readFileSync(srcDb, "utf-8"));
+        } catch (e) {
+          console.error("Failed parsing src/db.json, using initialData", e);
+        }
+      }
       const dir = path.dirname(DB_FILE);
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
-      fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2));
-      return initialData;
+      try {
+        fs.writeFileSync(DB_FILE, JSON.stringify(dataToUse, null, 2));
+      } catch (wErr) {
+        console.warn("Could not write initial DB to path", DB_FILE, wErr);
+      }
+      return dataToUse;
     }
     const raw = fs.readFileSync(DB_FILE, "utf-8");
     return JSON.parse(raw);
