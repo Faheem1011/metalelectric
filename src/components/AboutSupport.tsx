@@ -7,10 +7,11 @@ import {
 interface AboutSupportProps {
   lang: "EN" | "UR";
   setActivePage: (page: string) => void;
+  initialTab?: "story" | "faqs" | "downloads";
 }
 
-export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage }) => {
-  const [activeTab, setActiveTab] = useState<"story" | "faqs" | "downloads">("story");
+export const AboutSupport: React.FC<AboutSupportProps> = ({ lang, setActivePage, initialTab = "story" }) => {
+  const [activeTab, setActiveTab] = useState<"story" | "faqs" | "downloads">(initialTab);
 
   const faqs = [
     {

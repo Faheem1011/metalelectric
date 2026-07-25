@@ -15,10 +15,33 @@ import { X, Check, Zap, Cpu, Settings } from "lucide-react";
 
 import initialDb from "./db.json";
 
+const getInitialPage = () => {
+  const path = window.location.pathname.replace(/^\//, "").toLowerCase();
+  const validPages = ["home", "calculator", "products", "get-quote", "solutions", "support", "about", "contact"];
+  if (path && validPages.includes(path)) {
+    return path;
+  }
+  const hash = window.location.hash.replace(/^#/, "").toLowerCase();
+  if (hash && validPages.includes(hash)) {
+    return hash;
+  }
+  return "home";
+};
+
 export default function App() {
   const [lang, setLang] = useState<"EN" | "UR">("EN");
-  const [activePage, setActivePage] = useState<string>("home");
+  const [activePage, setActivePage] = useState<string>(getInitialPage());
   const [isAdminOpen, setIsAdminOpen] = useState(false);
+
+  // Synchronize browser history popstate
+  useEffect(() => {
+    const handlePopState = () => {
+      const page = getInitialPage();
+      setActivePage(page);
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   // Database collections loaded from Express API with local db.json seed fallback
   const [products, setProducts] = useState<Product[]>(initialDb.products as Product[] || []);
@@ -76,6 +99,10 @@ export default function App() {
 
   const handlePageChange = (page: string) => {
     setActivePage(page);
+    const targetUrl = page === "home" ? "/" : `/${page}`;
+    if (window.location.pathname !== targetUrl) {
+      window.history.pushState(null, "", targetUrl);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -132,8 +159,12 @@ export default function App() {
           <Solutions lang={lang} setActivePage={handlePageChange} />
         )}
 
-        {activePage === "support" && (
-          <AboutSupport lang={lang} setActivePage={handlePageChange} />
+        {(activePage === "about" || activePage === "support") && (
+          <AboutSupport 
+            lang={lang} 
+            setActivePage={handlePageChange} 
+            initialTab={activePage === "about" ? "story" : "faqs"}
+          />
         )}
 
         {activePage === "contact" && (
