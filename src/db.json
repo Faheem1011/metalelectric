@@ -1,0 +1,380 @@
+{
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Alpha Ampere 51.2V 100Ah Lithium Battery",
+      "slug": "alpha-ampere-51-2v-100ah-lithium-battery",
+      "sku": "aa-51-100",
+      "shortDescription": "Premium LiFePO4 battery with smart Bluetooth connectivity and an exceptional 15-year lifespan.",
+      "longDescription": "Model: Alpha51.2ML100. Premium LiFePO4 battery with smart Bluetooth connectivity and an exceptional lifespan. Engineered for continuous high discharge performance and seamless integration with hybrid solar inverters (Victron, Deye, Growatt, SMA, Solis). Features active cell balancing and multi-tier BMS safety.",
+      "price": 229000,
+      "discount": 7,
+      "category": "Solar Batteries",
+      "subcategory": "LiFePO4 Solar Batteries",
+      "tags": ["51.2V", "LiFePO4", "Solar", "UPS", "Featured", "Bluetooth"],
+      "voltage": "51.2 V",
+      "capacity": "100Ah (5.12 kWh)",
+      "dimensions": "480 x 440 x 180 mm",
+      "weight": "45 kg",
+      "warranty": "5 Years",
+      "stock": 25,
+      "status": "In Stock",
+      "featured": true,
+      "specifications": [
+        { "label": "Chemistry", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Nominal Power", "value": "5120 Wh" },
+        { "label": "Nominal Voltage", "value": "51.2 V" },
+        { "label": "Capacity", "value": "100 Ah" },
+        { "label": "Max Discharge Rate", "value": "1C" },
+        { "label": "Charging Current", "value": "50 A" },
+        { "label": "Discharging Current", "value": "100 A (DC)" },
+        { "label": "Connectivity", "value": "Smart Bluetooth + RS485/WiFi Optional" },
+        { "label": "Life", "value": "15 Years (8000 Life Cycles @ 0.5C & 25°C)" }
+      ],
+      "downloads": [
+        { "title": "Datasheet (PDF)", "url": "#" },
+        { "title": "User Manual (PDF)", "url": "#" }
+      ],
+      "applications": ["Solar Systems", "UPS Backup", "Residential Solar", "Commercial Backup"],
+      "thumbnail": "https://i.postimg.cc/BvRZZ47P/51v1.png",
+      "gallery": [
+        "https://i.postimg.cc/BvRZZ47P/51v1.png",
+        "https://i.postimg.cc/DZsv8HRj/51v2.png",
+        "https://i.postimg.cc/kGmn8wmn/51v3.png"
+      ]
+    },
+    {
+      "id": "prod-2",
+      "name": "Alpha Ampere 24V 100Ah Lithium Battery",
+      "slug": "alpha-ampere-24v-100ah-lithium-battery",
+      "sku": "aa-24-100",
+      "shortDescription": "Reliable 25.6V LiFePO4 battery with smart Bluetooth monitoring for 24V solar & UPS systems.",
+      "longDescription": "Model: Alpha25.6ML100. A powerful and reliable LiFePO4 battery for various solar and UPS applications, featuring smart Bluetooth monitoring. Built with premium grade-A prismatic cells for ultra-long cycle life and fast recharge rates.",
+      "price": 139000,
+      "discount": 7,
+      "category": "Solar Batteries",
+      "subcategory": "LiFePO4 Solar Batteries",
+      "tags": ["24V", "LiFePO4", "Solar", "UPS", "Featured", "Bluetooth"],
+      "voltage": "25.6 V",
+      "capacity": "100Ah (2.56 kWh)",
+      "dimensions": "440 x 360 x 170 mm",
+      "weight": "24 kg",
+      "warranty": "5 Years",
+      "stock": 30,
+      "status": "In Stock",
+      "featured": true,
+      "specifications": [
+        { "label": "Chemistry", "value": "LiFePO4 (Lithium Iron Phosphate)" },
+        { "label": "Nominal Power", "value": "2560 Wh" },
+        { "label": "Nominal Voltage", "value": "25.6 V" },
+        { "label": "Nominal Capacity", "value": "100 Ah" },
+        { "label": "Max Discharge Rate", "value": "1C" },
+        { "label": "Charging Current", "value": "50 A" },
+        { "label": "Discharging Current", "value": "100 A (DC)" },
+        { "label": "Connectivity", "value": "Smart Bluetooth + CAN/RS485 Optional" },
+        { "label": "Life", "value": "15 Years (8000 Life Cycles @ 0.5C & 25°C)" }
+      ],
+      "downloads": [
+        { "title": "Datasheet (PDF)", "url": "#" }
+      ],
+      "applications": ["Solar Systems", "UPS Backup", "Residential Backup", "Off-grid Power"],
+      "thumbnail": "https://i.postimg.cc/SxNxDZzR/24v1.png",
+      "gallery": [
+        "https://i.postimg.cc/SxNxDZzR/24v1.png",
+        "https://i.postimg.cc/9Q8FSGGp/24v2.png",
+        "https://i.postimg.cc/Gp4h1HK1/24v3.png"
+      ]
+    },
+    {
+      "id": "prod-3",
+      "name": "Alpha Ampere 12V 100Ah Lithium Battery",
+      "slug": "alpha-ampere-12v-100ah-lithium-battery",
+      "sku": "aa-12-100",
+      "shortDescription": "Versatile LiFePO4 drop-in replacement with Bluetooth for 12V UPS, marine, and solar setups.",
+      "longDescription": "Model: Alpha12.8ML100. A versatile LiFePO4 battery with smart Bluetooth, perfect for drop-in replacements of lead-acid batteries. Delivers 100% usable capacity, 8000+ cycle life, and low self-discharge.",
+      "price": 78000,
+      "discount": 8,
+      "category": "Solar Batteries",
+      "subcategory": "12V Batteries",
+      "tags": ["12V", "LiFePO4", "Solar", "UPS", "Featured", "Bluetooth"],
+      "voltage": "12.8 V",
+      "capacity": "100Ah (1.28 kWh)",
+      "dimensions": "330 x 172 x 215 mm",
+      "weight": "12.5 kg",
+      "warranty": "3 Years",
+      "stock": 40,
+      "status": "In Stock",
+      "featured": true,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "12.8 V" },
+        { "label": "Nominal Capacity", "value": "100 Ah" },
+        { "label": "Temperature Range", "value": "-10°C to 55°C" },
+        { "label": "Charge Cut Off Voltage", "value": "14.6 V" },
+        { "label": "Discharge Cut Off Voltage", "value": "10 V" },
+        { "label": "Communication", "value": "Smart Bluetooth" },
+        { "label": "Cell Technology", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Life", "value": "15 Years (8000 Life Cycles @ 0.5C)" }
+      ],
+      "downloads": [
+        { "title": "Datasheet (PDF)", "url": "#" }
+      ],
+      "applications": ["UPS Systems", "Solar Systems", "Car Audio", "Camping / RV"],
+      "thumbnail": "https://i.postimg.cc/tRWJTnjq/12v1.png",
+      "gallery": [
+        "https://i.postimg.cc/tRWJTnjq/12v1.png",
+        "https://i.postimg.cc/4N13vCyj/12v2.png",
+        "https://i.postimg.cc/5NJ0F94w/12v3.png"
+      ]
+    },
+    {
+      "id": "prod-4",
+      "name": "Alpha Ampere 12V 6.5Ah Lithium (LFP) Battery for Bike",
+      "slug": "alpha-ampere-12v-6-5ah-lithium-lfp-battery-bike",
+      "sku": "ab-12-100",
+      "shortDescription": "High CCA LiFePO4 starter battery for self-start motorcycles and heavy bikes.",
+      "longDescription": "Model: Alpha12SS6. Ultra-lightweight self-start motorcycle battery using high-discharge LiFePO4 cells. Cranks engines effortlessly while offering 10x longer lifespan than lead-acid motorcycle batteries.",
+      "price": 6200,
+      "discount": 11,
+      "category": "Motorcycle Batteries",
+      "subcategory": "Bike Starter Batteries",
+      "tags": ["12V", "LiFePO4", "Motorcycle", "Bike", "Self-Start"],
+      "voltage": "12.8 V",
+      "capacity": "6.5Ah (6500 mAh)",
+      "dimensions": "150 x 87 x 93 mm",
+      "weight": "0.95 kg",
+      "warranty": "2 Years",
+      "stock": 50,
+      "status": "In Stock",
+      "featured": false,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "12.8 V" },
+        { "label": "Nominal Capacity", "value": "6,500 mAh" },
+        { "label": "Temperature Range", "value": "-10°C to 55°C" },
+        { "label": "Charge Cut Off Voltage", "value": "14.4 V" },
+        { "label": "Discharge Cut Off Voltage", "value": "10 V" },
+        { "label": "Compatibility", "value": "Any Self-Start Motorbike" },
+        { "label": "Cell Technology", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Life", "value": "10 Years (2000 Life Cycles)" }
+      ],
+      "downloads": [],
+      "applications": ["Self-Start Motorcycles", "Heavy Bikes", "ATVs"],
+      "thumbnail": "https://i.postimg.cc/MHmzYR61/bike12v1.png",
+      "gallery": [
+        "https://i.postimg.cc/MHmzYR61/bike12v1.png",
+        "https://i.postimg.cc/8kRkD8Rs/bike12v2.png"
+      ]
+    },
+    {
+      "id": "prod-5",
+      "name": "Alpha Ampere 12V 2.5Ah Lithium (LFP) Battery for Bike",
+      "slug": "alpha-ampere-12v-2-5ah-lithium-lfp-battery-bike",
+      "sku": "ab-13-100",
+      "shortDescription": "Compact LiFePO4 battery for kick-start motorcycles and 70cc bikes.",
+      "longDescription": "Model: Alpha12KS3. Lightweight, long-lasting LiFePO4 battery optimized for kick-start bikes (CD70, CG125, etc.). Zero maintenance and spill-proof design.",
+      "price": 4300,
+      "discount": 14,
+      "category": "Motorcycle Batteries",
+      "subcategory": "Bike Starter Batteries",
+      "tags": ["12V", "LiFePO4", "Motorcycle", "Bike", "Kick-Start"],
+      "voltage": "12.8 V",
+      "capacity": "2.5Ah (2500 mAh)",
+      "dimensions": "113 x 70 x 85 mm",
+      "weight": "0.45 kg",
+      "warranty": "2 Years",
+      "stock": 60,
+      "status": "In Stock",
+      "featured": false,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "12.8 V" },
+        { "label": "Nominal Capacity", "value": "2,500 mAh" },
+        { "label": "Temperature Range", "value": "-10°C to 55°C" },
+        { "label": "Charge Cut Off Voltage", "value": "14.4 V" },
+        { "label": "Discharge Cut Off Voltage", "value": "10 V" },
+        { "label": "Compatibility", "value": "Any Kick Start Motorbike" },
+        { "label": "Cell Technology", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Life", "value": "10 Years (2000 Life Cycles)" }
+      ],
+      "downloads": [],
+      "applications": ["Kick-Start Motorbikes", "Standard Street Bikes"],
+      "thumbnail": "https://i.postimg.cc/BQJSnhpp/bike13v1.png",
+      "gallery": [
+        "https://i.postimg.cc/BQJSnhpp/bike13v1.png",
+        "https://i.postimg.cc/xTg0JKF2/bike13v2.png"
+      ]
+    },
+    {
+      "id": "prod-6",
+      "name": "REPT 3.2V 100Ah Cell Lithium Iron Phosphate (LFP)",
+      "slug": "rept-3-2v-100ah-cell-lithium-iron-phosphate-lfp",
+      "sku": "ac-12-100",
+      "shortDescription": "Grade-A REPT 3.2V 100Ah prismatic LiFePO4 battery cell for custom power packs.",
+      "longDescription": "Original REPT 3.2V 100Ah Prismatic Grade-A LiFePO4 Cell with aluminum casing and low internal impedance. Ideal for building DIY solar power walls, EV battery banks, and industrial power storage.",
+      "price": 9500,
+      "discount": 3,
+      "category": "Battery Accessories",
+      "subcategory": "Lithium Cells",
+      "tags": ["LiFePO4", "Cell", "Accessory", "3.2V", "Prismatic"],
+      "voltage": "3.2 V",
+      "capacity": "100 Ah (320 Wh)",
+      "dimensions": "174 x 130 x 36 mm",
+      "weight": "2.1 kg",
+      "warranty": "1 Year",
+      "stock": 100,
+      "status": "In Stock",
+      "featured": false,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "3.2 V" },
+        { "label": "Nominal Capacity", "value": "100 Ah" },
+        { "label": "Chemistry", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Standard Charge Current", "value": "0.5 C" },
+        { "label": "Max Continuous Discharge", "value": "1 C" }
+      ],
+      "downloads": [],
+      "applications": ["Custom Battery Packs", "DIY Solar Wall", "Electric Mobility"],
+      "thumbnail": "https://i.postimg.cc/NjzBbQcC/REPTv1.png",
+      "gallery": [
+        "https://i.postimg.cc/NjzBbQcC/REPTv1.png"
+      ]
+    },
+    {
+      "id": "prod-7",
+      "name": "Gotion 3.2V 27Ah Cell Lithium Iron Phosphate (LFP)",
+      "slug": "gotion-3-2v-27ah-cell-lithium-iron-phosphate-lfp",
+      "sku": "ac-13-100",
+      "shortDescription": "Compact Gotion 3.2V 27Ah LiFePO4 prismatic cell for small energy systems & e-bikes.",
+      "longDescription": "High quality Gotion 3.2V 27Ah prismatic LiFePO4 cell. Designed for moderate capacity power banks, portable power stations, and lightweight electric transport.",
+      "price": 3500,
+      "discount": 8,
+      "category": "Battery Accessories",
+      "subcategory": "Lithium Cells",
+      "tags": ["LiFePO4", "Cell", "Accessory", "3.2V", "Gotion"],
+      "voltage": "3.2 V",
+      "capacity": "27 Ah (86.4 Wh)",
+      "dimensions": "148 x 70 x 27 mm",
+      "weight": "0.65 kg",
+      "warranty": "1 Year",
+      "stock": 120,
+      "status": "In Stock",
+      "featured": false,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "3.2 V" },
+        { "label": "Nominal Capacity", "value": "27 Ah" },
+        { "label": "Chemistry", "value": "Lithium Iron Phosphate (LiFePO4)" }
+      ],
+      "downloads": [],
+      "applications": ["Portable Power Stations", "Small Solar Storage", "E-Bikes"],
+      "thumbnail": "https://i.postimg.cc/Z5RJrC1y/gotionv1.png",
+      "gallery": [
+        "https://i.postimg.cc/Z5RJrC1y/gotionv1.png"
+      ]
+    },
+    {
+      "id": "prod-8",
+      "name": "JK BMS 4S-8S 100A Li-ion/LiFePO4 Active Balancer",
+      "slug": "jk-bms-4s-8s-100a-li-ion-lifepo4",
+      "sku": "ac-14-100",
+      "shortDescription": "Smart JK BMS with built-in 1A active balancing and Bluetooth app control.",
+      "longDescription": "JK Smart BMS for 4S to 8S LiFePO4/Li-ion battery packs. Includes integrated 1A active cell balancer, dual temperature sensors, mobile Bluetooth monitoring, and programmable over/under voltage protection.",
+      "price": 13500,
+      "discount": 4,
+      "category": "Battery Accessories",
+      "subcategory": "BMS & Electronics",
+      "tags": ["BMS", "LiFePO4", "Accessory", "Bluetooth", "Active Balancer"],
+      "voltage": "12V - 24V (4S-8S)",
+      "capacity": "100A Continuous",
+      "dimensions": "162 x 102 x 20 mm",
+      "weight": "0.4 kg",
+      "warranty": "1 Year",
+      "stock": 45,
+      "status": "In Stock",
+      "featured": false,
+      "specifications": [
+        { "label": "Brand", "value": "JK BMS" },
+        { "label": "Active Balancer", "value": "1 A Active Balancing" },
+        { "label": "Discharge Current", "value": "100 A Continuous" },
+        { "label": "Charge Current", "value": "50 A" },
+        { "label": "Supported Strings", "value": "4S to 8S (12V - 24V Systems)" }
+      ],
+      "downloads": [],
+      "applications": ["DIY Battery Builds", "24V Solar Battery Pack", "12V Battery Pack"],
+      "thumbnail": "https://onvolt.pl/wp-content/uploads/2025/09/a4b761cb-b394-4957-bd4e-a49e6b5b6c6d.jpg",
+      "gallery": [
+        "https://onvolt.pl/wp-content/uploads/2025/09/a4b761cb-b394-4957-bd4e-a49e6b5b6c6d.jpg"
+      ]
+    },
+    {
+      "id": "prod-9",
+      "name": "Alpha Ampere LiFe-48200 Pro Wall Mount",
+      "slug": "alpha-ampere-life-48200-pro",
+      "sku": "AA-LFP-48V-200AH",
+      "shortDescription": "Ultra-high performance 9.6kWh LiFePO4 wall-mount energy storage system with integrated 200A smart Bluetooth BMS.",
+      "longDescription": "The Alpha Ampere LiFe-48200 Pro is our flagship wall-mounted energy storage system designed to deliver bulletproof reliability, ultra-long service life, and maximum efficiency for premium homes and critical commercial solar configurations. Engineered with automotive-grade Prismatic Grade-A LiFePO4 cells.",
+      "price": 495000,
+      "discount": 10,
+      "category": "Wall Mount Batteries",
+      "subcategory": "Solar Batteries",
+      "tags": ["48V", "Premium", "LiFePO4", "Wall Mount", "Featured"],
+      "voltage": "48V (51.2V Nominal)",
+      "capacity": "200Ah (9.6 kWh)",
+      "dimensions": "650 x 480 x 220 mm",
+      "weight": "84 kg",
+      "warranty": "5 Years",
+      "stock": 14,
+      "status": "In Stock",
+      "featured": true,
+      "specifications": [
+        { "label": "Nominal Voltage", "value": "51.2 V" },
+        { "label": "Nominal Capacity", "value": "200 Ah" },
+        { "label": "Total Energy", "value": "10.24 kWh (9.6 kWh Usable)" },
+        { "label": "Chemistry", "value": "Lithium Iron Phosphate (LiFePO4)" },
+        { "label": "Cell Type", "value": "Premium Prismatic Grade A" },
+        { "label": "Cycle Life", "value": "8,000+ Cycles @ 80% DoD" },
+        { "label": "Max Charge Current", "value": "150 A" },
+        { "label": "Max Discharge Current", "value": "200 A Continuous" },
+        { "label": "Communication Protocols", "value": "CAN, RS485, RS232, Bluetooth" }
+      ],
+      "downloads": [],
+      "applications": ["Solar Systems", "UPS Backup", "Residential Backup", "Telecom Backup"],
+      "thumbnail": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600",
+      "gallery": [
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "Why LiFePO₄ is the Ultimate Lithium Chemistry for Pakistan's Extreme Climate",
+      "slug": "lifepo4-pakistan-extreme-climate",
+      "content": "Pakistan experiences some of the most brutal summers globally, with ambient temperatures in Sindh and Punjab frequently scaling past 45°C. For industrial plants and high-end residential energy backups, traditional Lithium-Ion (NMC) or Lead-Acid batteries represent massive hazards.\n\n### The Science of LiFePO₄\nLithium Iron Phosphate (LiFePO4) stands apart due to its extreme thermal stability. Unlike NMC cells which can enter thermal runaway at ~150°C, LiFePO₄ thermal runaway threshold sits robustly at 270°C. Additionally, the chemistry delivers over 8,000 cycles without significant degradation, whereas Lead-Acid batteries give up after 300-500 cycles under typical high-temperature operations.\n\nAt **Metalectrics**, our battery packs feature custom-molded cellular spacer channels and smart thermal cutoffs, ensuring absolute safety even during extended blackouts in June.",
+      "category": "Lithium",
+      "tags": ["LiFePO4", "Battery Safety", "Pakistan climate"],
+      "author": "Metalectrics Engineering Team",
+      "featuredImage": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
+      "createdAt": "2026-07-20T10:30:00Z",
+      "readTime": "5 min read"
+    }
+  ],
+  "quotes": [],
+  "dealers": [],
+  "messages": [],
+  "settings": {
+    "logo": "Metalectrics",
+    "favicon": "/favicon.png",
+    "theme": "dark",
+    "socialLinks": {
+      "facebook": "https://www.facebook.com/profile.php?id=61576602905984",
+      "instagram": "https://www.instagram.com/metalectrics/",
+      "youtube": "https://www.youtube.com/@METALECTRICS"
+    },
+    "contactInfo": {
+      "phone": "+92 309 8000565",
+      "secondaryPhone": "+92 344 6760259",
+      "email": "metalectrics@gmail.com",
+      "infoEmail": "info@metalectrics.com",
+      "officeAddress": "Faisalabad Road, Okara, Pakistan",
+      "businessHours": "Saturday–Thursday, 10:00 AM–8:00 PM"
+    },
+    "whatsAppNumber": "+923098000565"
+  }
+}
