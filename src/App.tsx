@@ -16,14 +16,16 @@ import { Footer } from "./components/Footer";
 import { Product, BlogPost, SiteSettings } from "./types";
 import { X, Check, Zap, Cpu, Settings } from "lucide-react";
 
+import initialDb from "./db.json";
+
 export default function App() {
   const [lang, setLang] = useState<"EN" | "UR">("EN");
   const [activePage, setActivePage] = useState<string>("home");
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
-  // Database collections loaded from Express API
-  const [products, setProducts] = useState<Product[]>([]);
-  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  // Database collections loaded from Express API with local db.json seed fallback
+  const [products, setProducts] = useState<Product[]>(initialDb.products as Product[] || []);
+  const [blogs, setBlogs] = useState<BlogPost[]>(initialDb.blogs as BlogPost[] || []);
   const [settings, setSettings] = useState<SiteSettings>({
     logo: "Metalectrics",
     favicon: "/favicon.png",

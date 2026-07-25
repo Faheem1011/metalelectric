@@ -35,7 +35,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       title: "LFP ENERGY SYSTEMS",
       subtitle: "Automotive-Grade LiFePO₄ Battery Storage with Intelligent BMS, Engineered for 15+ Year Lifespans.",
       searchPlaceholder: "Search battery model or SKU...",
-      categories: ["All", "Wall Mount Batteries", "Rack Batteries", "Portable Power", "Custom Battery Packs"],
+      categories: ["All", "Solar Batteries", "Motorcycle Batteries", "Battery Accessories", "Wall Mount Batteries"],
       filters: "Filter Parameters",
       voltage: "Nominal Voltage",
       sort: "Sort By",
@@ -61,7 +61,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       title: "لیتھیم انرجی کیٹلاگ",
       subtitle: "جدید بی ایم ایس کے ساتھ لیتھیم آئرن فاسفیٹ (LiFePO4) بیٹریاں، جو پندرہ سال سے زائد لائف کے لیے ڈیزائن کی گئی ہیں۔",
       searchPlaceholder: "بیٹری ماڈل تلاش کریں...",
-      categories: ["All", "Wall Mount Batteries", "Rack Batteries", "Portable Power", "Custom Battery Packs"],
+      categories: ["All", "Solar Batteries", "Motorcycle Batteries", "Battery Accessories", "Wall Mount Batteries"],
       filters: "فلٹرز",
       voltage: "وولٹیج",
       sort: "ترتیب دیں",
@@ -113,7 +113,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       p.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesCategory = 
-      selectedCategory === "All" || p.category === selectedCategory || p.subcategory === selectedCategory;
+      selectedCategory === "All" || 
+      p.category === selectedCategory || 
+      p.subcategory === selectedCategory ||
+      (p.tags && p.tags.some(t => t.toLowerCase() === selectedCategory.toLowerCase() || selectedCategory.toLowerCase().includes(t.toLowerCase())));
 
     const matchesVoltage = 
       voltageFilter === "All" || p.voltage.includes(voltageFilter);
