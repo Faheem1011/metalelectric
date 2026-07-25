@@ -3,7 +3,7 @@ import { Product, BlogPost, QuoteRequest, DealerApplication, ContactMessage, Sit
 import { 
   Lock, Key, ShieldCheck, LayoutDashboard, Database, FileText, 
   MessageSquare, UserCheck, Settings, LogOut, Plus, Trash2, Edit2, 
-  Check, X, Zap, RefreshCw, FileCheck, PhoneCall, AlertCircle
+  Check, X, Zap, RefreshCw, FileCheck, PhoneCall, AlertCircle, Eye, EyeOff, Image
 } from "lucide-react";
 
 interface AdminPanelProps {
@@ -30,6 +30,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [token, setToken] = useState<string | null>(localStorage.getItem("admin-token"));
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
 
@@ -240,61 +241,73 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       
       {!token ? (
         /* LOGIN BLOCK */
-        <div className="bg-[#090909] border-2 border-zinc-900 rounded-2xl w-full max-w-md p-8 shadow-2xl space-y-6 text-left relative">
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-[#F6B91E]/3 rounded-full blur-2xl" />
+        <div className="bg-[#090909] border border-zinc-800 rounded-3xl w-full max-w-md p-8 shadow-2xl space-y-6 text-left relative">
+          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-[#F6B91E]/5 rounded-full blur-2xl pointer-events-none" />
           
           <button 
             onClick={onClose} 
-            className="absolute top-4 right-4 p-1.5 rounded-full border border-zinc-800 text-zinc-500 hover:text-white"
+            className="absolute top-4 right-4 p-2 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all z-10"
           >
             <X size={16} />
           </button>
 
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono text-[#F6B91E] font-bold tracking-widest uppercase block">SECURE SYSTEM CONSOLE</span>
-            <h2 className="text-xl font-black text-white">Engineering Login</h2>
-            <p className="text-xs text-zinc-500">Provide credentials registered in Sundar R&D databases.</p>
+          <div className="space-y-2">
+            <div className="flex items-center space-x-2">
+              <ShieldCheck size={16} className="text-[#F6B91E]" />
+              <span className="text-xs font-mono text-[#F6B91E] font-bold tracking-widest uppercase">SECURE ADMIN ACCESS</span>
+            </div>
+            <h2 className="text-2xl font-black text-white tracking-tight">Administrative Portal</h2>
+            <p className="text-xs text-zinc-400 leading-relaxed">Enter authorized credentials to access the Metalectrics management console.</p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-4 pt-4">
+          <form onSubmit={handleLogin} className="space-y-4 pt-2">
             <div>
-              <label className="block text-xs font-mono text-zinc-500 mb-1.5">EMAIL REGISTERED</label>
+              <label className="block text-xs font-mono text-zinc-400 mb-1.5 uppercase font-bold">Email Address</label>
               <input
                 type="email"
                 required
                 placeholder="admin@metalectricpk.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-zinc-950 border border-zinc-900 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#F6B91E] font-mono"
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#F6B91E] font-mono transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono text-zinc-500 mb-1.5 font-bold">PASSWORD (DEMO IS "admin")</label>
-              <input
-                type="password"
-                required
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-zinc-950 border border-zinc-900 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#F6B91E] font-mono"
-              />
+              <label className="block text-xs font-mono text-zinc-400 mb-1.5 uppercase font-bold">Password</label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  required
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-zinc-950 border border-zinc-800 rounded-xl pl-4 pr-10 py-3 text-xs text-white focus:outline-none focus:border-[#F6B91E] font-mono transition-all"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-3 text-zinc-500 hover:text-zinc-300 transition-colors"
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
             </div>
 
             {loginError && (
-              <p className="text-red-500 text-xs font-mono flex items-center space-x-1">
-                <AlertCircle size={14} />
+              <div className="p-3 rounded-xl bg-red-950/40 border border-red-900/50 text-red-400 text-xs font-mono flex items-center space-x-2">
+                <AlertCircle size={14} className="shrink-0" />
                 <span>{loginError}</span>
-              </p>
+              </div>
             )}
 
             <button
               type="submit"
               disabled={loggingIn}
-              className="w-full py-3 rounded-xl bg-[#F6B91E] hover:bg-[#e0a410] text-black font-extrabold text-xs transition-all duration-300 flex items-center justify-center space-x-2"
+              className="w-full py-3.5 rounded-xl bg-[#F6B91E] hover:bg-[#e0a410] text-[#050505] font-black text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg"
             >
               <Lock size={14} />
-              <span>{loggingIn ? "Authenticating security..." : "Decrypt & Enter"}</span>
+              <span>{loggingIn ? "Verifying Credentials..." : "Sign In to Admin Console"}</span>
             </button>
           </form>
         </div>
@@ -578,6 +591,53 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                             onChange={(e) => setEditingProduct({ ...editingProduct, longDescription: e.target.value })}
                             className="w-full bg-zinc-950 border border-zinc-900 rounded-lg px-3 py-2 text-white leading-relaxed"
                           />
+                        </div>
+
+                        {/* PRODUCT IMAGES SECTION */}
+                        <div className="sm:col-span-2 border-t border-zinc-900 pt-4 space-y-3 text-left">
+                          <span className="block text-xs font-mono font-bold text-[#F6B91E] uppercase">
+                            PRODUCT IMAGES & MEDIA ASSETS
+                          </span>
+                          
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                              <label className="block text-zinc-400 mb-1">MAIN THUMBNAIL IMAGE URL</label>
+                              <input
+                                type="text"
+                                placeholder="/images/products/aa-51-100-0.png or https://..."
+                                value={editingProduct.thumbnail || ""}
+                                onChange={(e) => setEditingProduct({ ...editingProduct, thumbnail: e.target.value })}
+                                className="w-full bg-zinc-950 border border-zinc-900 rounded-lg px-3 py-2 text-white font-mono text-xs"
+                              />
+                              {editingProduct.thumbnail && (
+                                <div className="mt-2 p-2 bg-zinc-950 border border-zinc-900 rounded-lg flex items-center space-x-3">
+                                  <img src={editingProduct.thumbnail} alt="Thumbnail preview" className="w-12 h-12 object-contain rounded bg-black border border-zinc-800" />
+                                  <span className="text-[10px] text-zinc-400 font-mono">Thumbnail Preview</span>
+                                </div>
+                              )}
+                            </div>
+
+                            <div>
+                              <label className="block text-zinc-400 mb-1">GALLERY IMAGE URLS (COMMA SEPARATED)</label>
+                              <input
+                                type="text"
+                                placeholder="/images/products/aa-51-100-0.png, /images/products/aa-51-100-1.png"
+                                value={editingProduct.gallery ? editingProduct.gallery.join(", ") : ""}
+                                onChange={(e) => {
+                                  const arr = e.target.value.split(",").map(s => s.trim()).filter(Boolean);
+                                  setEditingProduct({ ...editingProduct, gallery: arr });
+                                }}
+                                className="w-full bg-zinc-950 border border-zinc-900 rounded-lg px-3 py-2 text-white font-mono text-xs"
+                              />
+                              {editingProduct.gallery && editingProduct.gallery.length > 0 && (
+                                <div className="mt-2 flex items-center space-x-2 overflow-x-auto p-1 bg-zinc-950 border border-zinc-900 rounded-lg">
+                                  {editingProduct.gallery.map((imgUrl, i) => (
+                                    <img key={i} src={imgUrl} alt={`Gallery preview ${i}`} className="w-10 h-10 object-contain rounded bg-black border border-zinc-800 shrink-0" />
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          </div>
                         </div>
                       </div>
 

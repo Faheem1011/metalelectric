@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AlphaAmpereLogo } from "./Logos";
-import { Menu, X, Globe, ChevronDown, Zap } from "lucide-react";
+import { Menu, X, Globe, Zap, Lock } from "lucide-react";
 
 interface NavbarProps {
   activePage: string;
@@ -13,47 +13,27 @@ interface NavbarProps {
 export const translations = {
   EN: {
     home: "Home",
+    calculator: "Calculator",
     products: "Products",
     solutions: "Solutions",
-    industries: "Industries",
-    about: "About Us",
-    quality: "Quality Testing",
-    downloads: "Downloads",
     support: "Support & FAQs",
-    warranty: "Warranty",
+    about: "About Us",
     contact: "Contact",
-    dealer: "Dealers",
-    careers: "Careers",
-    projects: "Installations",
     getQuote: "Get Quote",
     admin: "Admin Console",
-    tagline: "Powering Pakistan with Next-Gen Lithium Energy",
-    exploreBtn: "Explore Systems",
-    quoteBtn: "Get Quote",
-    becomeDealer: "Become Dealer",
-    backToHome: "Back to Home"
+    tagline: "Powering Pakistan with Next-Gen Lithium Energy"
   },
   UR: {
     home: "ہوم",
+    calculator: "کیلکولیٹر",
     products: "پروڈکٹس",
     solutions: "حل (سلوشنز)",
-    industries: "انڈسٹریز",
-    about: "ہمارے بارے میں",
-    quality: "کوالٹی ٹیسٹنگ",
-    downloads: "ڈاؤن لوڈز",
     support: "سپورٹ اور سوالات",
-    warranty: "وارنٹی",
+    about: "ہمارے بارے میں",
     contact: "رابطہ کریں",
-    dealer: "ڈیلرز",
-    careers: "ملازمتیں",
-    projects: "تنصیبات",
     getQuote: "کوٹیشن حاصل کریں",
     admin: "ایڈمن پینل",
-    tagline: "پاکستان کو اگلی نسل کی لیتھیم انرجی سے بااختیار بنانا",
-    exploreBtn: "مصنوعات دیکھیں",
-    quoteBtn: "کوٹ حاصل کریں",
-    becomeDealer: "ڈیلر بنیں",
-    backToHome: "ہوم پیج پر واپس جائیں"
+    tagline: "پاکستان کو اگلی نسل کی لیتھیم انرجی سے بااختیار بنانا"
   }
 };
 
@@ -65,37 +45,26 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenAdmin,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const t = translations[lang];
 
   const handleNav = (page: string) => {
     setActivePage(page);
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navItems = [
     { id: "home", label: t.home },
-    { id: "calculator", label: lang === "EN" ? "Calculator" : "کیلکولیٹر" },
+    { id: "calculator", label: t.calculator },
     { id: "products", label: t.products },
     { id: "solutions", label: t.solutions },
-    { id: "industries", label: t.industries },
-    { id: "quality", label: t.quality },
     { id: "support", label: t.support },
+    { id: "about", label: t.about },
     { id: "contact", label: t.contact },
   ];
 
-  const secondaryItems = [
-    { id: "about", label: t.about },
-    { id: "warranty", label: t.warranty },
-    { id: "dealer", label: t.dealer },
-    { id: "careers", label: t.careers },
-    { id: "projects", label: t.projects },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-[#050505]/80 backdrop-blur-xl border-b border-[#242424]">
+    <header className="sticky top-0 z-50 w-full transition-all duration-300 bg-[#050505]/90 backdrop-blur-xl border-b border-[#242424]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo & Name */}
@@ -104,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center space-x-3 cursor-pointer group"
           id="nav-brand-logo"
         >
-          <AlphaAmpereLogo size={42} className="group-hover:scale-105" />
+          <AlphaAmpereLogo size={42} className="group-hover:scale-105 transition-transform" />
           <div className="flex flex-col">
             <span className="font-sans font-black text-xl tracking-wider text-white">
               ALPHA AMPERE
@@ -123,46 +92,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNav(item.id)}
               className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 hover:text-white ${
                 activePage === item.id
-                  ? "text-[#F6B91E] bg-[#242424]/40"
+                  ? "text-[#F6B91E] bg-[#242424]/60"
                   : "text-[#BFC5C9]"
               }`}
             >
               {item.label}
             </button>
           ))}
-
-          {/* More Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-[#BFC5C9] hover:text-white transition-all rounded-md"
-            >
-              <span>{lang === "EN" ? "More" : "مزید"}</span>
-              <ChevronDown size={14} className={`transform transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-52 rounded-xl bg-[#090909] border border-[#242424] shadow-2xl p-2 z-50">
-                {secondaryItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNav(item.id)}
-                    className={`w-full text-left px-4 py-2 text-sm rounded-lg transition-all ${
-                      activePage === item.id
-                        ? "text-[#F6B91E] bg-[#242424]"
-                        : "text-[#BFC5C9] hover:text-white hover:bg-[#242424]/40"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
         </nav>
 
         {/* Actions (Language, Admin, Quote Button) */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-3">
           
           {/* Language Toggle */}
           <button
@@ -177,21 +117,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Admin link */}
           <button
             onClick={onOpenAdmin}
-            className={`px-3 py-1.5 rounded-full border border-dashed transition-all text-xs font-mono ${
+            className={`flex items-center space-x-1 px-3 py-1.5 rounded-full border border-dashed transition-all text-xs font-mono ${
               activePage === "admin"
-                ? "border-[#F6B91E] text-[#F6B91E] bg-[#F6B91E]/5"
-                : "border-[#242424] text-[#BFC5C9] hover:text-white hover:border-[#F6B91E]"
+                ? "border-[#F6B91E] text-[#F6B91E] bg-[#F6B91E]/10"
+                : "border-[#333] text-zinc-400 hover:text-white hover:border-[#F6B91E]"
             }`}
           >
-            {t.admin}
-          </button>
-
-          {/* Become a dealer */}
-          <button
-            onClick={() => handleNav("dealer")}
-            className="text-xs font-medium text-[#BFC5C9] hover:text-[#F6B91E] transition-all"
-          >
-            {t.becomeDealer}
+            <Lock size={12} className="text-[#F6B91E]" />
+            <span>{t.admin}</span>
           </button>
 
           {/* Get Quote Action Button */}
@@ -227,8 +160,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#050505] border-b border-[#242424] py-6 px-4 space-y-4 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
-          <div className="grid grid-cols-2 gap-2">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#050505] border-b border-[#242424] py-6 px-4 space-y-3 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="grid grid-cols-1 gap-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -244,31 +177,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </div>
 
-          <div className="border-t border-[#242424] pt-4">
-            <p className="text-xs font-mono uppercase text-[#666] mb-2 px-2">More Resources</p>
-            <div className="grid grid-cols-2 gap-2">
-              {secondaryItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNav(item.id)}
-                  className={`text-left px-4 py-2 rounded-lg text-xs transition-all ${
-                    activePage === item.id
-                      ? "text-[#F6B91E] bg-[#242424]"
-                      : "text-[#BFC5C9] hover:text-white hover:bg-[#242424]/40"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div className="border-t border-[#242424] pt-4 space-y-3">
             <button
-              onClick={onOpenAdmin}
-              className="w-full py-3 rounded-lg bg-[#242424]/50 border border-[#242424] text-center text-sm font-mono text-white"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenAdmin();
+              }}
+              className="w-full py-3 rounded-lg bg-[#242424]/50 border border-[#242424] text-center text-sm font-mono text-white flex items-center justify-center space-x-2"
             >
-              🔐 {t.admin}
+              <Lock size={14} className="text-[#F6B91E]" />
+              <span>{t.admin}</span>
             </button>
             <button
               onClick={() => handleNav("get-quote")}

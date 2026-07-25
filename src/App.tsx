@@ -4,13 +4,10 @@ import { Hero } from "./components/Hero";
 import { HomeDetails } from "./components/HomeDetails";
 import { ProductCatalog } from "./components/ProductCatalog";
 import { QuoteForm } from "./components/QuoteForm";
-import { DealerForm } from "./components/DealerForm";
 import { Solutions } from "./components/Solutions";
 import { AboutSupport } from "./components/AboutSupport";
 import { AdminPanel } from "./components/AdminPanel";
 import { ContactPage } from "./components/ContactPage";
-import { CareersPage } from "./components/CareersPage";
-import { ProjectsPage } from "./components/ProjectsPage";
 import { BatterySizingCalculator } from "./components/BatterySizingCalculator";
 import { Footer } from "./components/Footer";
 import { Product, BlogPost, SiteSettings } from "./types";
@@ -131,10 +128,6 @@ export default function App() {
           />
         )}
 
-        {activePage === "dealers" && (
-          <DealerForm lang={lang} />
-        )}
-
         {activePage === "solutions" && (
           <Solutions lang={lang} setActivePage={handlePageChange} />
         )}
@@ -145,14 +138,6 @@ export default function App() {
 
         {activePage === "contact" && (
           <ContactPage lang={lang} />
-        )}
-
-        {activePage === "careers" && (
-          <CareersPage lang={lang} />
-        )}
-
-        {activePage === "projects" && (
-          <ProjectsPage lang={lang} setActivePage={handlePageChange} />
         )}
       </main>
 
